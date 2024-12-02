@@ -6,5 +6,7 @@ It happens that one of my computers runs on roughly 10 years old Intel i5-4460 s
 ```
 ./01/solve_a.py: 18 19 19 19 19 19 19 19 19 19 ms | avg: 18 ms
 ./01/solve_b.py: 19 19 19 19 19 19 19 19 19 19 ms | avg: 19 ms
+./02/solve_a.py: 25 25 26 26 26 26 26 26 26 26 ms | avg: 25 ms
+./02/solve_b.py: 29 28 29 28 28 28 29 29 28 29 ms | avg: 28 ms
 ./_meta/python_startup.py: 14 11 11 11 11 11 11 11 11 11 ms | avg: 11 ms
 ```
