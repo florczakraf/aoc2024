@@ -12,5 +12,5 @@ It happens that one of my computers runs on roughly 10 years old Intel i5-4460 s
 ./03/solve_b.py: 23 23 23 24 23 23 23 23 23 23 ms | avg: 23 ms
 ./04/solve_a.py: 74 28 28 28 29 28 28 29 29 28 ms | avg: 32 ms
 ./04/solve_b.py: 49 52 49 50 50 50 50 49 51 49 ms | avg: 49 ms
-./_meta/python_startup.py: 14 11 11 11 11 11 11 11 11 11 ms | avg: 11 ms
+./_meta/python_startup.py: 17 17 17 17 17 17 17 17 17 17 ms | avg: 17 ms
 ```
