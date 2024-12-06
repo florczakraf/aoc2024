@@ -3,16 +3,19 @@ AoC [readme](https://adventofcode.com/2024/about) says that:
 
 It happens that one of my computers runs on roughly 10 years old Intel i5-4460 so I decided to use it as a benchmarking machine instead of my daily driver i9-10850k that runs at almost twice the clock.
 
-```
-./01/solve_a.py: 18 19 19 19 19 19 19 19 19 19 ms | avg: 18 ms
-./01/solve_b.py: 19 19 19 19 19 19 19 19 19 19 ms | avg: 19 ms
-./02/solve_a.py: 25 25 26 26 26 26 26 26 26 26 ms | avg: 25 ms
-./02/solve_b.py: 29 28 29 28 28 28 29 29 28 29 ms | avg: 28 ms
-./03/solve_a.py: 25 24 25 23 23 23 23 23 24 23 ms | avg: 23 ms
-./03/solve_b.py: 23 23 23 24 23 23 23 23 23 23 ms | avg: 23 ms
-./04/solve_a.py: 74 28 28 28 29 28 28 29 29 28 ms | avg: 32 ms
-./04/solve_b.py: 49 52 49 50 50 50 50 49 51 49 ms | avg: 49 ms
-./05/solve_a.py: 59 20 20 20 21 20 20 20 20 20 ms | avg: 24 ms
-./05/solve_b.py: 37 36 36 36 37 36 36 36 37 37 ms | avg: 36 ms
-./_meta/python_startup.py: 17 17 17 17 17 17 17 17 17 17 ms | avg: 17 ms
-```
+|task|interpreter|run 1|run 2|run 3|run 4|run 5|avg|
+|----|-----------|-----|-----|-----|-----|-----|---|
+| ./01/solve_a.py | python3 | 19 ms | 19 ms | 20 ms | 20 ms | 20 ms | **19 ms** |
+| ./01/solve_b.py | python3 | 19 ms | 19 ms | 19 ms | 19 ms | 19 ms | **19 ms** |
+| ./02/solve_a.py | python3 | 21 ms | 21 ms | 21 ms | 21 ms | 21 ms | **21 ms** |
+| ./02/solve_b.py | python3 | 25 ms | 24 ms | 24 ms | 24 ms | 24 ms | **24 ms** |
+| ./03/solve_a.py | python3 | 19 ms | 19 ms | 19 ms | 19 ms | 19 ms | **19 ms** |
+| ./03/solve_b.py | python3 | 18 ms | 18 ms | 19 ms | 18 ms | 19 ms | **18 ms** |
+| ./04/solve_a.py | python3 | 30 ms | 30 ms | 29 ms | 29 ms | 29 ms | **29 ms** |
+| ./04/solve_b.py | python3 | 50 ms | 49 ms | 49 ms | 50 ms | 50 ms | **49 ms** |
+| ./05/solve_a.py | python3 | 21 ms | 21 ms | 21 ms | 21 ms | 21 ms | **21 ms** |
+| ./05/solve_b.py | python3 | 37 ms | 37 ms | 37 ms | 37 ms | 37 ms | **37 ms** |
+| ./06/solve_a.py | python3 | 18 ms | 19 ms | 18 ms | 18 ms | 18 ms | **18 ms** |
+| ./06/solve_b.py | pypy3 | 7731 ms | 7600 ms | 7990 ms | 7622 ms | 8131 ms | **7814 ms** |
+| ./_meta/pypy_startup.py | pypy3 | 41 ms | 41 ms | 41 ms | 41 ms | 41 ms | **41 ms** |
+| ./_meta/python_startup.py | python3 | 17 ms | 18 ms | 18 ms | 18 ms | 18 ms | **17 ms** |

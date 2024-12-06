@@ -1,1 +1,1 @@
-./04/solve_a.py: 74 28 28 28 29 28 28 29 29 28 ms | avg: 32 ms
+| ./04/solve_a.py | python3 | 30 ms | 30 ms | 29 ms | 29 ms | 29 ms | **29 ms** |

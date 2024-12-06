@@ -1,1 +1,1 @@
-./01/solve_a.py: 18 19 19 19 19 19 19 19 19 19 ms | avg: 18 ms
+| ./01/solve_a.py | python3 | 19 ms | 19 ms | 20 ms | 20 ms | 20 ms | **19 ms** |

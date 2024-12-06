@@ -1,1 +1,1 @@
-./_meta/python_startup.py: 17 17 17 17 17 17 17 17 17 17 ms | avg: 17 ms
+| ./_meta/python_startup.py | python3 | 17 ms | 18 ms | 18 ms | 18 ms | 18 ms | **17 ms** |

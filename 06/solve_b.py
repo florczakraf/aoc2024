@@ -1,3 +1,4 @@
+#!/usr/bin/env pypy3
 import sys
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 from itertools import cycle
@@ -33,7 +34,7 @@ def check_loop(guard_candidate):
         else:
             pos = next_pos
 
-pool = ProcessPoolExecutor(max_workers=10)
+pool = ProcessPoolExecutor(max_workers=6)
 candidates = []
 for y in range(len(map)):
     for x in range(len(map[y])):

@@ -1,1 +1,1 @@
-./05/solve_a.py: 59 20 20 20 21 20 20 20 20 20 ms | avg: 24 ms
+| ./05/solve_a.py | python3 | 21 ms | 21 ms | 21 ms | 21 ms | 21 ms | **21 ms** |
