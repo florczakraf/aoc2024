@@ -1,1 +1,1 @@
-| ./06/solve_b.py | pypy3 | 7731 ms | 7600 ms | 7990 ms | 7622 ms | 8131 ms | **7814 ms** |
+| ./06/solve_b.py | pypy3 | 2992 ms | 3054 ms | 2933 ms | 3013 ms | 3087 ms | **3015 ms** |

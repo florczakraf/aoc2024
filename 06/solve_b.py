@@ -12,7 +12,7 @@ for y in range(len(map)):
 
 loops = 0
 
-def check_loop(guard_candidate):
+def check_loop(guard_candidate, ret_vis=False):
     print(guard_candidate)
     dirs = cycle(((-1, 0), (0, 1), (1, 0), (0, -1)))
     dir = next(dirs)
@@ -27,19 +27,18 @@ def check_loop(guard_candidate):
 
         next_pos = pos[0] + dir[0], pos[1] + dir[1]
         if not ((0 <= next_pos[0] < len(map)) and (0 <= next_pos[1] < len(map[0]))):
-            return 0
+            if ret_vis:
+                return vis
+            else:
+                return 0
 
         if map[next_pos[0]][next_pos[1]] == "#" or next_pos == guard_candidate:
             dir = next(dirs)
         else:
             pos = next_pos
 
-pool = ProcessPoolExecutor(max_workers=6)
-candidates = []
-for y in range(len(map)):
-    for x in range(len(map[y])):
-        if map[y][x] in "^#":
-            continue
-        candidates.append((y, x))
 
+vis = check_loop((-10,-10), ret_vis=True)
+candidates = set(x[0] for x in vis)
+pool = ProcessPoolExecutor(max_workers=6)
 print(sum(pool.map(check_loop, candidates)))
