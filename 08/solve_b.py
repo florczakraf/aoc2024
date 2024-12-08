@@ -17,20 +17,10 @@ for y, l in enumerate(lines):
             antennas[c] = [(y, x)]
         else:
             for yy, xx in antennas[c]:
-                antinodes.add((y, x))
-                antinodes.add((yy, xx))
                 dy = y - yy
                 dx = x - xx
-
-                cy = y + dy
-                cyy = yy - dy
-
-                if dx < 0:
-                    cx = x - abs(dx)
-                    cxx = xx + abs(dx)
-                else:
-                    cx = x + abs(dx)
-                    cxx = xx - abs(dx)
+                cy = cyy = y
+                cx = cxx = x
 
                 while (0 <= cx < max_x) and (0 <= cy < max_y):
                     antinodes.add((cy, cx))
