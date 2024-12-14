@@ -10,7 +10,7 @@ for s in $(find . -name '*py' | sort); do
     fi
 
     interpreter=$(head -n 1 "$s" | rev | cut -d" " -f 1 | rev)
-    echo -ne "| $s | $interpreter | " >> "$s.stats"
+    echo -ne "| [$s]($s) | $interpreter | " >> "$s.stats"
     totals=()
     for _ in $(seq 1 $N); do
         d=$(dirname "$s")
