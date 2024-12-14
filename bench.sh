@@ -18,14 +18,14 @@ for s in $(find . -name '*py' | sort); do
         "$s" < "$d/input" >/dev/null
         total_ms="$((($(date +%s%N) - "$start")/1000000))"
         totals+=("$total_ms")
-        echo -n "$total_ms ms | " >> "$s.stats"
+        echo -n "${total_ms}"$'\u00a0'ms" | " >> "$s.stats"
     done
 
     sum=0
     for e in "${totals[@]}"; do
         sum=$(("$sum" + "$e"))
     done
-    echo "**$(("$sum" / "$N")) ms** |" >> "$s.stats"
+    echo "**$(("$sum" / "$N"))"$'\u00a0'"ms** |" >> "$s.stats"
 
     cat "$s.stats"
 done

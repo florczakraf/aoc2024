@@ -1,1 +1,1 @@
-| [./14/solve_b.py](./14/solve_b.py) | pypy3 | 126 ms | 125 ms | 125 ms | 126 ms | 132 ms | **126 ms** |
+| [./14/solve_b.py](./14/solve_b.py) | pypy3 | 126 ms | 127 ms | 126 ms | 127 ms | 128 ms | **126 ms** |
