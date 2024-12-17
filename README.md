@@ -37,5 +37,8 @@ It happens that one of my computers runs on roughly 10 years old Intel i5-4460 s
 | [./15/solve_b.py](./15/solve_b.py) | python3 | 51 ms | 53 ms | 51 ms | 50 ms | 50 ms | **51 ms** |
 | [./16/solve_a.py](./16/solve_a.py) | python3 | 153 ms | 152 ms | 156 ms | 153 ms | 154 ms | **153 ms** |
 | [./16/solve_b.py](./16/solve_b.py) | python3 | 152 ms | 155 ms | 152 ms | 155 ms | 156 ms | **154 ms** |
+| [./17/solve_a.py](./17/solve_a.py) | python3 | 18 ms | 18 ms | 18 ms | 18 ms | 18 ms | **18 ms** |
+| [./17/solve_b.py](./17/solve_b.py) | python3 | 71 ms | 71 ms | 71 ms | 71 ms | 70 ms | **70 ms** |
+| [./17/solve_b_z3.py](./17/solve_b_z3.py) | python3 | 251 ms | 249 ms | 255 ms | 253 ms | 248 ms | **251 ms** |
 | [./_meta/pypy_startup.py](./_meta/pypy_startup.py) | pypy3 | 40 ms | 39 ms | 40 ms | 40 ms | 40 ms | **39 ms** |
 | [./_meta/python_startup.py](./_meta/python_startup.py) | python3 | 17 ms | 17 ms | 17 ms | 17 ms | 17 ms | **17 ms** |
