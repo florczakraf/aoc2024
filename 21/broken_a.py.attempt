@@ -1,0 +1,108 @@
+#!/usr/bin/env python3
+import sys
+from collections import defaultdict
+
+lines = sys.stdin.read().splitlines()
+
+
+numpad = ["789", "456", "123", " 0A"]
+arrows = [" ^A", "<v>"]
+
+dirs = (
+    (1, 0),
+    (0, 1),
+    (-1, 0),
+    (0, -1),
+)
+
+def floyd_warshall(g):
+    dists = defaultdict(lambda: float("inf"))
+    prev = {}
+    for dy, dx in dirs:
+        for y, l in enumerate(g):
+            for x, c in enumerate(l):
+                if c == " ":
+                    continue
+                yy = y + dy
+                xx = x + dx
+                if 0 <= yy < len(g) and 0 <= xx < len(g[0]) and g[yy][xx] != " ":
+                    dists[(y, x), (yy, xx)] = 1
+                    prev[(y, x), (yy, xx)] = (y, x)
+
+                dists[(y, x), (y, x)] = 0
+                prev[(y, x), (y, x)] = (y, x)
+
+    nodes = set(yx for yx, _ in dists.keys())
+    for y, x in nodes:
+        for yy, xx in nodes:
+            for yyy, xxx in nodes:
+                new_dist = dists[(yy, xx), (y, x)] + dists[(y, x), (yyy, xxx)]
+                if dists[(yy, xx), (yyy, xxx)] > new_dist:
+                    dists[(yy, xx), (yyy, xxx)] = new_dist
+                    prev[(yy, xx), (yyy, xxx)] = prev[(y, x), (yyy, xxx)]
+
+    paths = {}
+    def make_path(y, x, yy, xx):
+        if ((y, x), (yy, xx)) not in prev:
+            return []
+        path = [(yy, xx)]
+        while (y, x) != (yy, xx):
+            yy, xx = prev[(y, x), (yy, xx)]
+            path.append((yy, xx))
+
+        return path[::-1]
+
+    for (y, x) in nodes:
+        for (yy, xx) in nodes:
+            c = g[y][x]
+            cc = g[yy][xx]
+            paths[c, cc] = make_path(y, x, yy, xx)
+
+    return paths
+
+path_to_dir = {
+    (0, 1): ">",
+    (1, 0): "v",
+    (0, -1): "<",
+    (-1, 0): "^",
+}
+
+def path_to_dirs(path):
+    out = []
+    for (y, x), (yy, xx) in zip(path[:-1], path[1:]):
+        dy = yy - y
+        dx = xx - x
+        out.append(path_to_dir[(dy, dx)])
+    return out
+
+
+arrows_paths = floyd_warshall(arrows)
+numpad_paths = floyd_warshall(numpad)
+
+print(path_to_dirs(arrows_paths[("^", "<")]))
+
+for l in lines:
+    print(l)
+    l = "A" + l
+    steps = []
+    for s, e in zip(l[:-1], l[1:]):
+        steps.extend(path_to_dirs(numpad_paths[(s, e)]))
+        steps.append("A")
+    print("".join(steps))
+
+    steps = ["A"] + steps
+    steps2 = []
+    for s, e in zip(steps[:-1], steps[1:]):
+        steps2.extend(path_to_dirs(arrows_paths[(s, e)]))
+        steps2.append("A")
+    print("".join(steps2))
+
+    steps2 = ["A"] + steps2
+    steps3 = []
+    for s, e in zip(steps2[:-1], steps2[1:]):
+        steps3.extend(path_to_dirs(arrows_paths[(s, e)]))
+        steps3.append("A")
+    print("".join(steps3))
+    print(len(steps3))
+
+    print()
