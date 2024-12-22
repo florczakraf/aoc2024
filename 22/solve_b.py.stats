@@ -1,0 +1,1 @@
+| [./22/solve_b.py](./22/solve_b.py) | pypy3 | 5725 ms | 5586 ms | 5638 ms | 5639 ms | 5564 ms | **5630 ms** |
