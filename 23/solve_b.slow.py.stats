@@ -1,0 +1,1 @@
+| [./23/solve_b.slow.py](./23/solve_b.slow.py) | pypy3 | 100910 ms | 101693 ms | 103238 ms | 101448 ms | 99914 ms | **101440 ms** |
